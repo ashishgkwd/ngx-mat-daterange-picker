@@ -1,0 +1,19 @@
+.ngx-mat-drp-presets-list {
+    list-style-type: none;
+    margin: 0px;
+    padding: 0px;
+}
+
+.ngx-mat-drp-presets-list li {
+    margin: 5px 0 5px 0;
+    padding: 4%;
+    cursor: pointer;
+    background: #fafafa;
+    color: #3f51b5;
+    user-select: none;
+}
+
+.ngx-mat-drp-presets-list li:hover {
+    background: #3f51b5;
+    color: #fff;
+}

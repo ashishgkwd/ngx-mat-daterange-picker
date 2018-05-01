@@ -1,0 +1,23 @@
+/* You can add global styles to this file, and also import other style files */
+@import "~@angular/material/prebuilt-themes/indigo-pink.css";
+
+.demo-main {
+    margin: 5% 0 0 10%;
+}
+
+.demo-box {
+    padding: 2% 0 2% 0;
+}
+
+.demo-rule {
+    margin-right: 10%;
+}
+
+.ngx-mat-drp-menu .ngx-mat-drp-presets-list li {
+    margin: 5px 0 5px 0;
+    padding: 4%;
+    cursor: pointer;
+    background: #fafafa;
+    color: #53b53f;
+    user-select: none;
+}

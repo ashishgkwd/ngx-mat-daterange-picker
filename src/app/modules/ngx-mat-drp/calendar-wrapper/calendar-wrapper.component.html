@@ -1,0 +1,21 @@
+<div>
+
+  <!-- <mat-divider></mat-divider> -->
+  <span class="ngx-mat-drp-date-label">
+    <label>{{prefixLabel}}</label>
+    <label class="ngx-mat-drp-selected-date-label">{{selectedDate | date:dateFormat}}</label>
+  </span>
+  <!-- <mat-divider></mat-divider> -->
+
+  <mat-calendar 
+    [startAt]="selectedDate"
+    [selected]="selectedDate"
+    [minDate]="minDate"
+    [maxDate]="maxDate"
+    (selectedChange)="onSelectedChange($event)"
+    (yearSelected)="onYearSelected($event)"
+    (_userSelection)="onUserSelection($event)"
+    [dateFilter]="weekendFilter">
+  </mat-calendar>
+
+</div>

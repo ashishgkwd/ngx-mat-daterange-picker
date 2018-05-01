@@ -1,0 +1,30 @@
+<div class="ngx-mat-drp-calendar-container">
+
+  <div class="ngx-mat-drp-calendar-item">
+    <calendar-wrapper 
+    [prefixLabel]="'FROM:'" 
+    [selectedDate]="fromDate"
+    [minDate]="fromMinDate"
+    [maxDate]="fromMaxDate"
+    (selectedDateChange)="updateFromDate($event)">
+  </calendar-wrapper>
+  </div>
+  <div class="ngx-mat-drp-calendar-item">
+    <calendar-wrapper 
+    [prefixLabel]="'TO:'" 
+    [selectedDate]="toDate"
+    [minDate]="toMinDate"
+    [maxDate]="toMaxDate" 
+    (selectedDateChange)="updateToDate($event)">
+  </calendar-wrapper>
+  </div>
+  <div class="ngx-mat-drp-calendar-item">
+    <div class="ngx-mat-drp-menu">
+      <mat-drp-presets [presets]="presets" (presetChanged)="updateRangeByPreset($event)"></mat-drp-presets>
+      <div class="ngx-mat-drp-controls">
+        <button mat-button color="primary" (click)="applyNewDates($event)">{{applyLabel}}</button>
+        <button mat-button (click)="discardNewDates($event)">{{cancelLabel}}</button>
+      </div>
+    </div>
+  </div>
+</div>
