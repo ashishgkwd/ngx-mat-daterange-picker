@@ -5,8 +5,7 @@ Date range picker component based of [Angular Material](https://material.angular
 Packaged using [ng-packagr](http://spektrakel.de/ng-packagr/)
 
 ## Demo
-
-
+![alt text](https://github.com/ashishgkwd/ngx-mat-daterange-picker/blob/master/src/assets/img/ngx-mat-daterange-picker.gif "ngx-mat-daterange-picker")
 
 ## Installation 
 
