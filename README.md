@@ -1,3 +1,7 @@
+[![CircleCI](https://circleci.com/gh/ashishgkwd/ngx-mat-daterange-picker.svg?style=shield)](https://circleci.com/gh/ashishgkwd/ngx-mat-daterange-picker) [![Maintainability](https://api.codeclimate.com/v1/badges/2b0d09a866f6d2ed139c/maintainability)](https://codeclimate.com/github/ashishgkwd/ngx-mat-daterange-picker/maintainability)
+[![Test Coverage](https://api.codeclimate.com/v1/badges/2b0d09a866f6d2ed139c/test_coverage)](https://codeclimate.com/github/ashishgkwd/ngx-mat-daterange-picker/test_coverage) 
+![Angular_Version 5](https://img.shields.io/badge/Angular_Version-5-brightgreen.svg)
+
 # NgxMatDaterangePicker
 
 Date range picker component based of [Angular Material](https://material.angular.io/) calendar component and configurable date presets.
