@@ -5,8 +5,8 @@
   "scripts": {
     "ng": "ng",
     "start": "ng serve",
-    "build": "ng build --prod",
-    "test": "ng test",
+    "build": "ng build --prod --no-progress",
+    "test": "ng test --single-run --no-progress --cc",
     "lint": "ng lint",
     "e2e": "ng e2e",
     "packagr": "rimraf dist && ng-packagr -p ng-package.json",
