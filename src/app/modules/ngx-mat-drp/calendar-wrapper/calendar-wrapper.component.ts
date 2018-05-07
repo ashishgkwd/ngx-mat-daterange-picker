@@ -33,7 +33,7 @@ export class CalendarWrapperComponent implements OnChanges {
   
   ngOnChanges(changes:SimpleChanges){
     // Necessary to force view refresh
-    this.matCalendar._activeDate = changes.selectedDate.currentValue;
+    this.matCalendar.activeDate = changes.selectedDate.currentValue;
   }
 
   onSelectedChange(date){

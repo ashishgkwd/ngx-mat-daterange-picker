@@ -1,34 +1,50 @@
 [![CircleCI](https://circleci.com/gh/ashishgkwd/ngx-mat-daterange-picker.svg?style=shield)](https://circleci.com/gh/ashishgkwd/ngx-mat-daterange-picker) [![Maintainability](https://api.codeclimate.com/v1/badges/2b0d09a866f6d2ed139c/maintainability)](https://codeclimate.com/github/ashishgkwd/ngx-mat-daterange-picker/maintainability)
 [![Test Coverage](https://api.codeclimate.com/v1/badges/2b0d09a866f6d2ed139c/test_coverage)](https://codeclimate.com/github/ashishgkwd/ngx-mat-daterange-picker/test_coverage) 
-![Angular_Version 5](https://img.shields.io/badge/Angular_Version-5-brightgreen.svg)
+![Angular_Version 6](https://img.shields.io/badge/Angular%20Version-6-brightgreen.svg)
 
 # NgxMatDaterangePicker
 
-Date range picker component based of [Angular Material](https://material.angular.io/) calendar component and configurable date presets.
+Angular Material Date range picker with configurable Date presets.
+
+Fully compatible with latest Angular versions.
+Please see the installation table below for version compatability.
 
 Packaged using [ng-packagr](http://spektrakel.de/ng-packagr/)
 
 ## Demo
-![alt text](https://github.com/ashishgkwd/ngx-mat-daterange-picker/blob/master/src/assets/img/ngx-mat-daterange-picker.gif "ngx-mat-daterange-picker")
+
+![ngx-mat-daterange-picker.gif](https://s14.postimg.cc/z397mpj1t/ngx-mat-daterange-picker.gif)
 
 ## Installation 
 
-```
+Angular Version | Compatible version
+---|---
+6.0 | v1.0.0
+5.0 and below | v0.0.1
+
+#### For Angular v6:
+```javascript
 npm install ngx-mat-daterange-picker --save
-```
 or
-```
 yarn add ngx-mat-daterange-picker --save
+```
+
+#### For Angular v5 and below:
+```javascript
+npm install ngx-mat-daterange-picker@0.0.1 --save
+or
+yarn add ngx-mat-daterange-picker@0.0.1 --save
 ```
 
 ## Peer Dependencies
 
-Please note and install the following peer dependencies necessary
+Please note and install the following peer dependencies necessary for Angular v6
+
 ```json
 "peerDependencies": {
-    "@angular/animations": "^5.2.10",
-    "@angular/cdk": "^5.2.5",
-    "@angular/material": "^5.2.5"
+    "@angular/animations": "^6.0.0",
+    "@angular/cdk": "^6.0.0",
+    "@angular/material": "^6.0.0"
   }
 ```
 
@@ -48,7 +64,7 @@ import { NgxMatDrpModule } from 'ngx-mat-daterange-picker';
 export class AppModule { }
 ```
 
-Setup the `NgxDrpOptions` configuration required by the component and the handler function to receive the `Range` object on data selection.
+Setup the `NgxDrpOptions` configuration required by the component and the handler function to receive the `Range` object on Date selection.
 
 `app.component.ts`
 ```typescript
@@ -119,7 +135,7 @@ export class AppComponent {
 }
 ```
 
-Pass the reference of the new rang selection handler function to `selectedDateRangeChanged` event emitter and the `NgxDrpOptions` options reference to the `options` input property.
+Pass the reference of the new range selection handler function to `selectedDateRangeChanged` **event emitter** and the `NgxDrpOptions` options reference to the `options` **input** property.
 
 `app.compnent.html`
 ```html
@@ -155,6 +171,7 @@ export interface NgxDrpOptions {
 ## Build
 
 Run `ng build` to build the project. The build artifacts will be stored in the `dist/` directory. Use the `-prod` flag for a production build.
+
 Run `npm run packagr` to build the library project. The build artifacts will be stored in the `dist/`. 
 
 ## Running unit tests

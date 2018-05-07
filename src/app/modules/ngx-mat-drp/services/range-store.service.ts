@@ -1,6 +1,6 @@
 import { Injectable, Inject, InjectionToken } from '@angular/core';
-import { Subject } from 'rxjs/Subject';
 import { Range } from '../model/model';
+import { Subject } from 'rxjs';
 /* import { DATE } from '../ngx-drp.module'; */
 
 export const DATE = new InjectionToken<Date>('date');

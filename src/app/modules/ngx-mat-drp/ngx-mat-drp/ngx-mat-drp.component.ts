@@ -5,9 +5,8 @@ import { CalendarOverlayService } from '../services/calendar-overlay.service';
 import { RangeStoreService } from '../services/range-store.service';
 import { Range, NgxDrpOptions } from '../model/model';
 import { timeout } from 'q';
-import { Observable } from 'rxjs/Observable';
-import { Subscription } from 'rxjs/Subscription';
 import { ConfigStoreService } from '../services/config-store.service';
+import { Subscription } from 'rxjs';
 
 @Component({
   selector: 'ngx-mat-drp',

@@ -17,12 +17,10 @@ import { CalendarWrapperComponent } from './calendar-wrapper/calendar-wrapper.co
 import { PresetsComponent } from './presets/presets.component';
 import { CalendarOverlayService } from './services/calendar-overlay.service';
 import { RangeStoreService, DATE } from './services/range-store.service';
-import { HttpClientModule } from '@angular/common/http';
 
 @NgModule({
   imports: [
     CommonModule,
-    HttpClientModule,
     BrowserAnimationsModule,
     MatFormFieldModule,
     MatDatepickerModule,

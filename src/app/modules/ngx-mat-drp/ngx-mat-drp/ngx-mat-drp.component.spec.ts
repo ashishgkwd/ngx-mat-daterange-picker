@@ -4,8 +4,6 @@ import { CalendarOverlayService } from '../services/calendar-overlay.service';
 import { RangeStoreService, DATE } from '../services/range-store.service';
 import { ConfigStoreService } from '../services/config-store.service';
 import { DatePipe } from '@angular/common';
-import { Observable } from 'rxjs/Observable';
-import { Subject } from 'rxjs/Subject';
 import { NgxMatDrpComponent } from './ngx-mat-drp.component';
 
 
