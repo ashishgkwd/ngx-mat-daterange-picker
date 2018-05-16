@@ -9,7 +9,7 @@ export interface Range {
     toDate: Date;
 }
 
-export interface CalendarDialogConfig {
+export interface CalendarOverlayConfig {
     panelClass?: string;
     hasBackdrop?: boolean;
     backdropClass?: string;
@@ -26,5 +26,7 @@ export interface NgxDrpOptions {
     toMinMax?:Range;
     applyLabel?:string;
     cancelLabel?:string;
+    animation?:boolean;
+    calendarOverlayConfig?:CalendarOverlayConfig;
 
 }

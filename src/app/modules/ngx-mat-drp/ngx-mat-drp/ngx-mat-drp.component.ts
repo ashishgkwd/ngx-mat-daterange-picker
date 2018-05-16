@@ -58,7 +58,7 @@ export class NgxMatDrpComponent implements OnInit, OnDestroy {
   }  
 
   openCalendar(event){
-    const overlayRef:OverlayRef =  this.calendarOverlayService.open({}, this.calendarInput);
+    const overlayRef:OverlayRef =  this.calendarOverlayService.open(this.options.calendarOverlayConfig, this.calendarInput);
   }
 
 }

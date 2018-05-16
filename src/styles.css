@@ -7,6 +7,8 @@
 
 .demo-box {
     padding: 2% 0 2% 0;
+    color: orangered;
+    font-family: sans-serif;
 }
 
 .demo-rule {

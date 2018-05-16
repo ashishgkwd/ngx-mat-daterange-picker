@@ -97,7 +97,11 @@ export class AppComponent {
                     presets:this.presets,
                     format: 'mediumDate',
                     range: {fromDate:today, toDate: today},
-                    applyLabel: "Submit"
+                    applyLabel: "Submit",
+                    calendarOverlayConfig: {
+                      shouldCloseOnBackdropClick: false,
+                      hasBackDrop: false
+                    }
                     //cancelLabel: "Cancel",
                     //excludeWeekends:true,
                     //fromMinMax: {fromDate:fromMin, toDate:fromMax},
@@ -158,6 +162,13 @@ export interface Range {
     toDate: Date;
 }
 
+export interface CalendarOverlayConfig {
+    panelClass?: string;
+    hasBackdrop?: boolean;
+    backdropClass?: string;
+    shouldCloseOnBackdropClick?: boolean;
+}
+
 export interface NgxDrpOptions {
     presets: Array<PresetItem>;
     format: string;
@@ -168,6 +179,8 @@ export interface NgxDrpOptions {
     toMinMax?:Range;
     applyLabel?:string;
     cancelLabel?:string;
+    animation?:boolean;
+    calendarOverlayConfig?:CalendarOverlayConfig;
 }
 ```
 

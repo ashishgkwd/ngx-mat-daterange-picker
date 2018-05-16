@@ -1,13 +1,13 @@
 import { Injectable, ElementRef, Injector } from '@angular/core';
 import { Overlay, OverlayConfig, OverlayRef } from '@angular/cdk/overlay';
 import { ComponentPortal, PortalInjector } from '@angular/cdk/portal';
-import { NgxDrpOptions, CalendarDialogConfig } from '../model/model';
+import { NgxDrpOptions, CalendarOverlayConfig } from '../model/model';
 import { takeWhile } from 'rxjs/operators';
 import { PickerOverlayComponent } from '../picker-overlay/picker-overlay.component';
 
 
 
-const DEFAULT_CONFIG: CalendarDialogConfig = {
+const DEFAULT_CONFIG:  CalendarOverlayConfig = {
   panelClass:'ngx-mat-drp-overlay',
   hasBackdrop:true,
   backdropClass:'ngx-mat-drp-overlay-backdrop',
@@ -21,7 +21,7 @@ export class CalendarOverlayService {
 
   constructor(private overlay:Overlay, private injector:Injector) { }
 
-  open(config:CalendarDialogConfig = {}, hostElemRef:ElementRef):OverlayRef{
+  open(config: CalendarOverlayConfig = {}, hostElemRef:ElementRef):OverlayRef{
     this.hostElemRef = hostElemRef;
     const overlayConfig = {...DEFAULT_CONFIG, ...config};
     const overlayRef = this.createOverlay(overlayConfig);
@@ -38,18 +38,44 @@ export class CalendarOverlayService {
     return overlayRef;
   }
 
-  private createOverlay(config:CalendarDialogConfig):OverlayRef {
+  private createOverlay(config: CalendarOverlayConfig):OverlayRef {
     const overlayConfig = this.getOverlayConfig(config);
     return this.overlay.create(overlayConfig);
   }
 
-  private getOverlayConfig(config:CalendarDialogConfig):OverlayConfig {
+  private getOverlayConfig(config: CalendarOverlayConfig):OverlayConfig {
     const positionStrategy = this.overlay.position()
-    .connectedTo(
-      this.hostElemRef,
-      {originX:'start', originY:'bottom'},
-      {overlayX:'start', overlayY:'top'}
-    ).withOffsetY(8);
+    .flexibleConnectedTo(
+      this.hostElemRef
+    ).withFlexibleDimensions(false)
+    .withViewportMargin(8)
+    .withDefaultOffsetY(12)
+    .withPositions([
+      {
+        originX: 'start',
+        originY: 'bottom',
+        overlayX: 'start',
+        overlayY: 'top'
+      },
+      {
+        originX: 'start',
+        originY: 'top',
+        overlayX: 'start',
+        overlayY: 'bottom'
+      },
+      {
+        originX: 'end',
+        originY: 'bottom',
+        overlayX: 'end',
+        overlayY: 'top'
+      },
+      {
+        originX: 'end',
+        originY: 'top',
+        overlayX: 'end',
+        overlayY: 'bottom'
+      }
+    ]);
 
     const overlayConfig = new OverlayConfig({
       hasBackdrop: config.hasBackdrop,

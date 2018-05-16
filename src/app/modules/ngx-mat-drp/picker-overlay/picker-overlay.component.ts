@@ -3,11 +3,15 @@ import { PresetItem, NgxDrpOptions } from '../model/model';
 import { RangeStoreService } from '../services/range-store.service';
 import { OverlayRef } from '@angular/cdk/overlay';
 import { ConfigStoreService } from '../services/config-store.service';
+import { pickerOverlayAnimations } from './picker-overlay.animations';
 
 @Component({
   selector: 'ngx-mat-drp-picker-overlay',
   templateUrl: './picker-overlay.component.html',
   styleUrls: ['./picker-overlay.component.css'],
+  animations:[
+    pickerOverlayAnimations.transformPanel,
+  ],
   encapsulation:ViewEncapsulation.None
 })
 export class PickerOverlayComponent implements OnInit {
@@ -21,6 +25,7 @@ export class PickerOverlayComponent implements OnInit {
   presets:Array<PresetItem> = [];
   applyLabel:string;
   cancelLabel:string;
+  shouldAnimate:string;
 
   constructor(
     private rangeStoreService:RangeStoreService,
@@ -34,6 +39,7 @@ export class PickerOverlayComponent implements OnInit {
     this.applyLabel = this.configStoreService.ngxDrpOptions.applyLabel || "Apply";
     this.cancelLabel = this.configStoreService.ngxDrpOptions.cancelLabel || "Cancel";
     this.presets = this.configStoreService.ngxDrpOptions.presets;
+    this.shouldAnimate = this.configStoreService.ngxDrpOptions.animation ? "enter" : "noop";
     ({fromDate:this.fromMinDate, toDate:this.fromMaxDate} = this.configStoreService.ngxDrpOptions.fromMinMax);
     ({fromDate:this.toMinDate, toDate:this.toMaxDate} = this.configStoreService.ngxDrpOptions.toMinMax);
   }
