@@ -25,7 +25,7 @@
     "lint": "ng lint",
     "e2e": "ng e2e",
     "packagr": "rimraf dist && ng-packagr -p ng-package.json",
-    "gh-build": "ng build --prod --output-path docs --base-href ngx-mat-daterange-picker"
+    "gh-build": "ng build --prod --output-path docs --base-href"
   },
   "private": true,
   "dependencies": {
