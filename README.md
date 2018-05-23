@@ -22,8 +22,8 @@ https://ashishgkwd.github.io/ngx-mat-daterange-picker/
 
 Angular Version | Compatible version
 ---|---
-6.0 | v1.0.0
-5.0 and below | v0.0.1
+6.0 | v1.1.1
+5.0 and below | v0.0.2
 
 #### For Angular v6:
 ```javascript
@@ -34,9 +34,23 @@ yarn add ngx-mat-daterange-picker --save
 
 #### For Angular v5 and below:
 ```javascript
-npm install ngx-mat-daterange-picker@0.0.1 --save
+npm install ngx-mat-daterange-picker@0.0.2 --save
 or
-yarn add ngx-mat-daterange-picker@0.0.1 --save
+yarn add ngx-mat-daterange-picker@0.0.2 --save
+```
+
+**NOTE:** Angular Material requires the `BrowserAnimationsModule` and 
+ as per [#5684](https://github.com/angular/angular-cli/issues/5684) `BrowserAnimationsModule` should only be imported in your app/main module.  
+
+`app.module.ts`   
+```typescript
+import {BrowserAnimationsModule} from '@angular/platform-browser/animations';
+
+@NgModule({
+  ...
+  imports: [BrowserAnimationsModule],
+  ...
+})
 ```
 
 ## Peer Dependencies

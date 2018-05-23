@@ -3,7 +3,6 @@ import { CommonModule } from '@angular/common';
 import { NgxMatDrpComponent } from './ngx-mat-drp/ngx-mat-drp.component';
 import { PickerOverlayComponent } from './picker-overlay/picker-overlay.component';
 
-import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
 import { MatFormFieldModule } from '@angular/material/form-field';
 import { MatDatepickerModule } from '@angular/material/datepicker';
 import { MatNativeDateModule } from '@angular/material/core';
@@ -21,7 +20,6 @@ import { RangeStoreService, DATE } from './services/range-store.service';
 @NgModule({
   imports: [
     CommonModule,
-    BrowserAnimationsModule,
     MatFormFieldModule,
     MatDatepickerModule,
     MatNativeDateModule,

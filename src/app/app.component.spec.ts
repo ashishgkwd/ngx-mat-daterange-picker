@@ -1,6 +1,7 @@
 import { TestBed, async } from '@angular/core/testing';
 import { AppComponent } from './app.component';
 import { NgxMatDrpModule } from '../../public_api';
+import {BrowserAnimationsModule} from '@angular/platform-browser/animations';
 
 describe('AppComponent', () => {
   beforeEach(async(() => {
@@ -8,7 +9,7 @@ describe('AppComponent', () => {
       declarations: [
         AppComponent
       ],
-      imports: [NgxMatDrpModule]
+      imports: [BrowserAnimationsModule ,NgxMatDrpModule]
     }).compileComponents();
   }));
   
