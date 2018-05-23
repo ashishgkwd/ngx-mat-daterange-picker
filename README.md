@@ -21,6 +21,21 @@ or
 yarn add ngx-mat-daterange-picker --save
 ```
 
+**NOTE:** This lib requires the `BrowserAnimationsModule` and 
+ as per [#5684](https://github.com/angular/angular-cli/issues/5684) `BrowserAnimationsModule` should be imported only in your app/main module.  
+
+`app.module.ts`   
+```typescript
+import {BrowserAnimationsModule} from '@angular/platform-browser/animations';
+
+@NgModule({
+  ...
+  imports: [BrowserAnimationsModule],
+  ...
+})
+```
+
+
 ## Peer Dependencies
 
 Please note and install the following peer dependencies necessary
