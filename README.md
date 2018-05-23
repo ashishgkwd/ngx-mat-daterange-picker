@@ -13,12 +13,17 @@ Packaged using [ng-packagr](http://spektrakel.de/ng-packagr/)
 
 ## Installation 
 
+Angular Version | Compatible version
+---|---
+6.0 | v1.0.0
+5.0 and below | v0.0.2
+
 ```
-npm install ngx-mat-daterange-picker --save
+npm install ngx-mat-daterange-picker@0.0.2 --save
 ```
 or
 ```
-yarn add ngx-mat-daterange-picker --save
+yarn add ngx-mat-daterange-picker@0.0.2 --save
 ```
 
 **NOTE:** This lib requires the `BrowserAnimationsModule` and 
