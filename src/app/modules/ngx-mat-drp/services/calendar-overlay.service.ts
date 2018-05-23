@@ -49,7 +49,37 @@ export class CalendarOverlayService {
       this.hostElemRef,
       {originX:'start', originY:'bottom'},
       {overlayX:'start', overlayY:'top'}
-    ).withOffsetY(8);
+    ).withOffsetY(8)
+    .withPositions([
+      {
+        offsetX: 0, offsetY: 8,
+        originX: 'start',
+        originY: 'bottom',
+        overlayX: 'start',
+        overlayY: 'top'
+      },
+      {
+        offsetX: 0, offsetY: -8,
+        originX: 'start',
+        originY: 'top',
+        overlayX: 'start',
+        overlayY: 'bottom'
+      },
+      {
+        offsetX: 0, offsetY: 0,
+        originX: 'end',
+        originY: 'bottom',
+        overlayX: 'end',
+        overlayY: 'top'
+      },
+      {
+        offsetX: 0, offsetY: 0,
+        originX: 'end',
+        originY: 'top',
+        overlayX: 'end',
+        overlayY: 'bottom'
+      }
+    ]);
 
     const overlayConfig = new OverlayConfig({
       hasBackdrop: config.hasBackdrop,
