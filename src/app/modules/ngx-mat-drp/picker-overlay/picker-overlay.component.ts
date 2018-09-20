@@ -23,6 +23,8 @@ export class PickerOverlayComponent implements OnInit {
   toMinDate:Date;
   toMaxDate:Date;
   presets:Array<PresetItem> = [];
+  startDatePrefix:string;
+  endDatePrefix:string;
   applyLabel:string;
   cancelLabel:string;
   shouldAnimate:string;
@@ -36,6 +38,8 @@ export class PickerOverlayComponent implements OnInit {
   ngOnInit() {
     this.fromDate = this.rangeStoreService.fromDate;
     this.toDate = this.rangeStoreService.toDate;
+    this.startDatePrefix = this.configStoreService.ngxDrpOptions.startDatePrefix || "FROM:";
+    this.endDatePrefix = this.configStoreService.ngxDrpOptions.endDatePrefix || "TO:";
     this.applyLabel = this.configStoreService.ngxDrpOptions.applyLabel || "Apply";
     this.cancelLabel = this.configStoreService.ngxDrpOptions.cancelLabel || "Cancel";
     this.presets = this.configStoreService.ngxDrpOptions.presets;

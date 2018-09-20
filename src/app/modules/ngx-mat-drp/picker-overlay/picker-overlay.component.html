@@ -2,7 +2,7 @@
 
   <div class="ngx-mat-drp-calendar-item">
     <calendar-wrapper 
-    [prefixLabel]="'FROM:'" 
+    [prefixLabel]="startDatePrefix"
     [selectedDate]="fromDate"
     [minDate]="fromMinDate"
     [maxDate]="fromMaxDate"
@@ -11,7 +11,7 @@
   </div>
   <div class="ngx-mat-drp-calendar-item">
     <calendar-wrapper 
-    [prefixLabel]="'TO:'" 
+    [prefixLabel]="endDatePrefix"
     [selectedDate]="toDate"
     [minDate]="toMinDate"
     [maxDate]="toMaxDate" 
