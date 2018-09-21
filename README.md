@@ -22,7 +22,7 @@ https://ashishgkwd.github.io/ngx-mat-daterange-picker/
 
 Angular Version | Compatible version
 ---|---
-6.0 | v1.1.1
+6.0 | v1.1.2
 5.0 and below | v0.0.2
 
 #### For Angular v6:
@@ -195,6 +195,9 @@ export interface NgxDrpOptions {
     cancelLabel?:string;
     animation?:boolean;
     calendarOverlayConfig?:CalendarOverlayConfig;
+    placeholder?:string;
+    startDatePrefix?:string;
+    endDatePrefix?:string;
 }
 ```
 
