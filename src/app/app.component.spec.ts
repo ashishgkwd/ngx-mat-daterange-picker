@@ -9,16 +9,16 @@ describe('AppComponent', () => {
       declarations: [
         AppComponent
       ],
-      imports: [BrowserAnimationsModule ,NgxMatDrpModule]
+      imports: [BrowserAnimationsModule , NgxMatDrpModule]
     }).compileComponents();
   }));
-  
+
   it('should create the app', async(() => {
     const fixture = TestBed.createComponent(AppComponent);
     const app = fixture.debugElement.componentInstance;
     expect(app).toBeTruthy();
   }));
-  it('should setup presets', async(()=> {
+  it('should setup presets', async(() => {
     const fixture = TestBed.createComponent(AppComponent);
     const app = fixture.debugElement.componentInstance;
     spyOn(app, 'setupPresets');
@@ -26,7 +26,7 @@ describe('AppComponent', () => {
     expect(app.setupPresets).toHaveBeenCalled();
     expect(app.presets).toBeDefined();
   }));
-  it('should setup date-range-picker options with required props', async(()=> {
+  it('should setup date-range-picker options with required props', async(() => {
     const fixture = TestBed.createComponent(AppComponent);
     const app = fixture.debugElement.componentInstance;
     fixture.detectChanges();
@@ -34,5 +34,5 @@ describe('AppComponent', () => {
     expect(app.options.format).toBeDefined();
     expect(app.options.range).toBeDefined();
   }));
-  
+
 });

@@ -22,7 +22,7 @@ https://ashishgkwd.github.io/ngx-mat-daterange-picker/
 
 Angular Version | Compatible version
 ---|---
-6.0 | v1.1.2
+6.0 | v1.1.3
 5.0 and below | v0.0.2
 
 #### For Angular v6:
@@ -59,9 +59,9 @@ Please note and install the following peer dependencies necessary for Angular v6
 
 ```json
 "peerDependencies": {
-    "@angular/animations": "^6.0.0",
-    "@angular/cdk": "^6.0.0",
-    "@angular/material": "^6.0.0"
+    "@angular/animations": "^6.1",
+    "@angular/cdk": "^6.1",
+    "@angular/material": "^6.1"
   }
 ```
 
@@ -108,7 +108,7 @@ export class AppComponent {
 
     this.setupPresets();
     this.options = {
-                    presets:this.presets,
+                    presets: this.presets,
                     format: 'mediumDate',
                     range: {fromDate:today, toDate: today},
                     applyLabel: "Submit",
@@ -116,19 +116,19 @@ export class AppComponent {
                       shouldCloseOnBackdropClick: false,
                       hasBackDrop: false
                     }
-                    //cancelLabel: "Cancel",
-                    //excludeWeekends:true,
-                    //fromMinMax: {fromDate:fromMin, toDate:fromMax},
-                    //toMinMax: {fromDate:toMin, toDate:toMax}
+                    // cancelLabel: "Cancel",
+                    // excludeWeekends:true,
+                    // fromMinMax: {fromDate:fromMin, toDate:fromMax},
+                    // toMinMax: {fromDate:toMin, toDate:toMax}
                   };
   }
   
-  //handler function that receives the updated date range object
-  updateRange(range:Range){
+  // handler function that receives the updated date range object
+  updateRange(range: Range){
     this.range = range;
   }  
   
-  //helper function to create initial presets
+  // helper function to create initial presets
   setupPresets() {
 
     const backDate = (numOfDays) => {
@@ -146,11 +146,11 @@ export class AppComponent {
     const lastMonthEnd = new Date(today.getFullYear(), today.getMonth(), 0);
     
     this.presets =  [
-      {presetLabel: "Yesterday", range:{fromDate:yesterday, toDate:today}},
-      {presetLabel: "Last 7 Days", range:{fromDate: minus7, toDate:today}},
-      {presetLabel: "Last 30 Days", range:{fromDate: minus30, toDate:today}},
-      {presetLabel: "This Month", range:{fromDate: currMonthStart, toDate:currMonthEnd}},
-      {presetLabel: "Last Month", range:{fromDate: lastMonthStart, toDate:lastMonthEnd}}
+      {presetLabel: "Yesterday", range:{ fromDate:yesterday, toDate:today }},
+      {presetLabel: "Last 7 Days", range:{ fromDate: minus7, toDate:today }},
+      {presetLabel: "Last 30 Days", range:{ fromDate: minus30, toDate:today }},
+      {presetLabel: "This Month", range:{ fromDate: currMonthStart, toDate:currMonthEnd }},
+      {presetLabel: "Last Month", range:{ fromDate: lastMonthStart, toDate:lastMonthEnd }}
     ]
   }
 }
@@ -168,7 +168,7 @@ Pass the reference of the new range selection handler function to `selectedDateR
 ```typescript
 export interface PresetItem {
     presetLabel: string;
-    range:Range;
+    range: Range;
 }
 
 export interface Range {
@@ -188,22 +188,22 @@ export interface NgxDrpOptions {
     format: string;
     range: Range;
     excludeWeekends?: boolean;
-    locale?:string;
-    fromMinMax?:Range;
-    toMinMax?:Range;
-    applyLabel?:string;
-    cancelLabel?:string;
-    animation?:boolean;
-    calendarOverlayConfig?:CalendarOverlayConfig;
-    placeholder?:string;
-    startDatePrefix?:string;
-    endDatePrefix?:string;
+    locale?: string;
+    fromMinMax?: Range;
+    toMinMax?: Range;
+    applyLabel?: string;
+    cancelLabel?: string;
+    animation?: boolean;
+    calendarOverlayConfig?: CalendarOverlayConfig;
+    placeholder?: string;
+    startDatePrefix?: string;
+    endDatePrefix?: string;
 }
 ```
 
 ## Build
 
-Run `ng build` to build the project. The build artifacts will be stored in the `dist/` directory. Use the `-prod` flag for a production build.
+Run `ng build` to build the project. The build artifacts will be stored in the `dist/` directory. Use the `--prod` flag for a production build.
 
 Run `npm run packagr` to build the library project. The build artifacts will be stored in the `dist/`. 
 

@@ -7,19 +7,18 @@ export const DATE = new InjectionToken<Date>('date');
 
 @Injectable()
 export class RangeStoreService {
-
-  rangeUpdate$:Subject<Range> = new Subject<Range> ();
+  rangeUpdate$: Subject<Range> = new Subject<Range>();
 
   constructor(
     @Inject(DATE) private _fromDate: Date,
     @Inject(DATE) private _toDate: Date
-  ) { }
+  ) {}
 
   /* set fromDate(fromDate:Date) {
     this._fromDate = fromDate;
   } */
 
-  get fromDate():Date {
+  get fromDate(): Date {
     return this._fromDate;
   }
 
@@ -27,15 +26,13 @@ export class RangeStoreService {
     this._toDate = toDate;
   } */
 
-  get toDate():Date {
+  get toDate(): Date {
     return this._toDate;
   }
 
-  updateRange(fromDate:Date = this._fromDate, toDate:Date = this._toDate) {
+  updateRange(fromDate: Date = this._fromDate, toDate: Date = this._toDate) {
     this._fromDate = fromDate;
     this._toDate = toDate;
-    this.rangeUpdate$.next({fromDate:this._fromDate, toDate:this._toDate});
+    this.rangeUpdate$.next({ fromDate: this._fromDate, toDate: this._toDate });
   }
-
-
 }

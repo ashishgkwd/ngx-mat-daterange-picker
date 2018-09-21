@@ -1,4 +1,13 @@
-import { Component, ViewChild, Output, Input, EventEmitter, ChangeDetectionStrategy, OnChanges, SimpleChanges } from '@angular/core';
+import {
+  Component,
+  ViewChild,
+  Output,
+  Input,
+  EventEmitter,
+  ChangeDetectionStrategy,
+  OnChanges,
+  SimpleChanges
+} from '@angular/core';
 import { MatCalendar } from '@angular/material/datepicker';
 import { ConfigStoreService } from '../services/config-store.service';
 
@@ -9,39 +18,39 @@ import { ConfigStoreService } from '../services/config-store.service';
   changeDetection: ChangeDetectionStrategy.OnPush
 })
 export class CalendarWrapperComponent implements OnChanges {
+  @ViewChild(MatCalendar)
+  matCalendar: MatCalendar<Date>;
 
-  @ViewChild(MatCalendar) matCalendar: MatCalendar<Date>;
+  @Output()
+  readonly selectedDateChange: EventEmitter<Date> = new EventEmitter<Date>();
 
-  @Output() readonly selectedDateChange:EventEmitter<Date> = new EventEmitter<Date>();
+  dateFormat: string;
+  @Input() selectedDate: Date;
+  @Input() prefixLabel: string;
+  @Input() minDate: Date;
+  @Input() maxDate: Date;
+  weekendFilter = (d: Date) => true;
 
-  @Input() selectedDate:Date;
-  @Input() prefixLabel:string;
-  @Input() minDate:Date;
-  @Input() maxDate:Date;
-  weekendFilter = (d:Date) => true;
-  dateFormat:string;
-
-  constructor(private configStore:ConfigStoreService) { 
+  constructor(private configStore: ConfigStoreService) {
     this.dateFormat = configStore.ngxDrpOptions.format;
-    if(configStore.ngxDrpOptions.excludeWeekends) {
+    if (configStore.ngxDrpOptions.excludeWeekends) {
       this.weekendFilter = (d: Date): boolean => {
-          const day = d.getDay();
-          return day !== 0 && day !== 6;
-      }
+        const day = d.getDay();
+        return day !== 0 && day !== 6;
+      };
     }
   }
-  
-  ngOnChanges(changes:SimpleChanges){
+
+  ngOnChanges(changes: SimpleChanges) {
     // Necessary to force view refresh
     this.matCalendar.activeDate = changes.selectedDate.currentValue;
   }
 
-  onSelectedChange(date){
+  onSelectedChange(date) {
     this.selectedDateChange.emit(date);
   }
 
-  onYearSelected(e) { }
+  onYearSelected(e) {}
 
-  onUserSelection(e) { }
-
+  onUserSelection(e) {}
 }

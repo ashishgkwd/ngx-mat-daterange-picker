@@ -11,11 +11,9 @@ import { MatButtonModule } from '@angular/material/button';
 import { MatTooltipModule } from '@angular/material/tooltip';
 import { OverlayModule } from '@angular/cdk/overlay';
 
-import { ConfigStoreService } from './services/config-store.service';
 import { CalendarWrapperComponent } from './calendar-wrapper/calendar-wrapper.component';
 import { PresetsComponent } from './presets/presets.component';
-import { CalendarOverlayService } from './services/calendar-overlay.service';
-import { RangeStoreService, DATE } from './services/range-store.service';
+import { DATE } from './services/range-store.service';
 
 @NgModule({
   imports: [
@@ -35,9 +33,6 @@ import { RangeStoreService, DATE } from './services/range-store.service';
     PresetsComponent
   ],
   providers: [
-    CalendarOverlayService,
-    RangeStoreService,
-    ConfigStoreService,
     {provide: DATE, useValue: new Date()}
   ],
   entryComponents: [PickerOverlayComponent],

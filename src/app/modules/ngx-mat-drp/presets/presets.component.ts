@@ -1,4 +1,12 @@
-import { Component, OnInit, Output, EventEmitter, Input, ChangeDetectionStrategy, ViewEncapsulation } from '@angular/core';
+import {
+  Component,
+  OnInit,
+  Output,
+  EventEmitter,
+  Input,
+  ChangeDetectionStrategy,
+  ViewEncapsulation
+} from '@angular/core';
 import { PresetItem } from '../model/model';
 
 @Component({
@@ -6,19 +14,18 @@ import { PresetItem } from '../model/model';
   templateUrl: './presets.component.html',
   styleUrls: ['./presets.component.css'],
   changeDetection: ChangeDetectionStrategy.OnPush
-  //encapsulation: ViewEncapsulation.None
 })
 export class PresetsComponent implements OnInit {
-  
-  @Input() presets:Array<PresetItem>;
-  @Output() readonly presetChanged:EventEmitter<any> = new EventEmitter<any>();
+  @Input()
+  presets: Array<PresetItem>;
+  @Output()
+  readonly presetChanged: EventEmitter<any> = new EventEmitter<any>();
 
-  constructor() { }
+  constructor() {}
 
-  ngOnInit() { }
+  ngOnInit() {}
 
-  setPresetPeriod(event){
+  setPresetPeriod(event) {
     this.presetChanged.emit(event);
   }
-
 }
