@@ -160,8 +160,22 @@ Pass the reference of the new range selection handler function to `selectedDateR
 
 `app.compnent.html`
 ```html
-<ngx-mat-drp (selectedDateRangeChanged)="updateRange($event)" [options]="options"></ngx-mat-drp>
+<ngx-mat-drp (selectedDateRangeChanged)="updateRange($event)" [options]="options" #dateRangePicker></ngx-mat-drp>
 ```
+
+Reset the date using `ViewChild` reference:
+```typescript
+@ViewChild('dateRangePicker') dateRangePicker;
+
+...
+
+const today = new Date();
+const resetRange = {fromDate: today, toDate: today};
+this.dateRangePicker.resetDates(resetRange); // will trigger selectedDateRangeChanged
+
+```
+
+
 
 ## Configuration
 
