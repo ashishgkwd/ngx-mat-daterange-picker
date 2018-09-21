@@ -22,7 +22,7 @@ https://ashishgkwd.github.io/ngx-mat-daterange-picker/
 
 Angular Version | Compatible version
 ---|---
-6.0 | v1.1.3
+6.0 | v1.1.4
 5.0 and below | v0.0.2
 
 #### For Angular v6:
