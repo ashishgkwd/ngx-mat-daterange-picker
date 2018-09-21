@@ -28,5 +28,7 @@ export interface NgxDrpOptions {
     cancelLabel?:string;
     animation?:boolean;
     calendarOverlayConfig?:CalendarOverlayConfig;
-
+    placeholder?:string;
+    startDatePrefix?:string;
+    endDatePrefix?:string;
 }
