@@ -1,9 +1,10 @@
-import { Component, OnInit } from '@angular/core';
+import { Component, OnInit, ViewChild } from '@angular/core';
 import {
   Range,
   NgxDrpOptions,
   PresetItem
 } from './modules/ngx-mat-drp/model/model';
+
 @Component({
   selector: 'ngx-mat-drp-root',
   templateUrl: './app.component.html',
@@ -13,6 +14,7 @@ export class AppComponent implements OnInit {
   range: Range = { fromDate: new Date(), toDate: new Date() };
   options: NgxDrpOptions;
   presets: Array<PresetItem> = [];
+  @ViewChild('pickerOne') pickerOne;
 
   ngOnInit() {
     const today = new Date();
@@ -34,7 +36,6 @@ export class AppComponent implements OnInit {
   }
 
   updateRange(range: Range) {
-    console.log('tri');
     this.range = range;
   }
 
@@ -76,5 +77,12 @@ export class AppComponent implements OnInit {
         range: { fromDate: lastMonthStart, toDate: lastMonthEnd }
       }
     ];
+  }
+
+  reset() {
+    const today = new Date();
+    const currMonthStart = new Date(today.getFullYear(), today.getMonth(), 1);
+    const currMonthEnd = new Date(today.getFullYear(), today.getMonth() + 1, 0);
+    this.pickerOne.resetDates({ fromDate: currMonthStart, toDate: currMonthEnd });
   }
 }

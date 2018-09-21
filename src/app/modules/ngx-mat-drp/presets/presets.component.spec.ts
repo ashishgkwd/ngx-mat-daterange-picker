@@ -24,7 +24,7 @@ describe('PresetsComponent', () => {
   });
 
   it('should emit preset change', () => {
-    let testEvent:any = {name:"testEvent"};
+    const testEvent: any = {name: 'testEvent'};
     component.presetChanged.subscribe(
       val => {
         expect(val).toEqual(testEvent);

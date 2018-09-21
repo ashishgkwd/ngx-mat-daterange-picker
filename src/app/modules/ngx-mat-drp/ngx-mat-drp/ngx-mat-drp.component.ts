@@ -86,4 +86,11 @@ export class NgxMatDrpComponent implements OnInit, OnDestroy {
       this.calendarInput
     );
   }
+
+  public resetDates(range: Range) {
+    this.rangeStoreService.updateRange(
+      range.fromDate,
+      range.toDate
+    );
+  }
 }

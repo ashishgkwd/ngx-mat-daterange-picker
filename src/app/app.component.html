@@ -3,9 +3,10 @@
   <div class="demo-box">
     Selected date from: {{range.fromDate|date}} to: {{range.toDate|date}} 
   </div>
+  <button (click)="reset()">Reset Dates</button>
   <hr class="demo-rule">
   <div class="demo-box">
-    <ngx-mat-drp (selectedDateRangeChanged)="updateRange($event)" [options]="options"></ngx-mat-drp>
+    <ngx-mat-drp (selectedDateRangeChanged)="updateRange($event)" [options]="options" #pickerOne></ngx-mat-drp>
   </div>
 
 </div>

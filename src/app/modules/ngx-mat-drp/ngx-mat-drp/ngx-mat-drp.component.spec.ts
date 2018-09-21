@@ -74,4 +74,19 @@ describe('NgxMatDrpComponent', () => {
       component.options.range.toDate
     );
   });
+
+  it('should reset dates as per input', () => {
+    // tslint:disable no-shadowed-variable
+    const today = new Date();
+    const currMonthStart = new Date(today.getFullYear(), today.getMonth(), 1);
+    const currMonthEnd = new Date(today.getFullYear(), today.getMonth() + 1, 0);
+    const resetRange = { fromDate: currMonthStart, toDate: currMonthEnd };
+    component.resetDates(resetRange);
+    component.selectedDateRangeChanged.subscribe(
+      range => {
+        expect(range.fromDate).toEqual(resetRange.fromDate);
+        expect(range.toDate).toEqual(resetRange.toDate);
+      }
+    );
+  });
 });
