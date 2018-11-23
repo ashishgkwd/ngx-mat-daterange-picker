@@ -69,8 +69,8 @@ export class PickerOverlayComponent implements OnInit {
   }
 
   updateRangeByPreset(presetItem: PresetItem) {
-    this.updateFromDate(presetItem.range.fromDate);
-    this.updateToDate(presetItem.range.toDate);
+    this.updateFromDate(new Date(presetItem.range.fromDate));
+    this.updateToDate(new Date(presetItem.range.toDate));
     if (this.applyOnPresetClick) {
       this.applyNewDates(null);
     }
