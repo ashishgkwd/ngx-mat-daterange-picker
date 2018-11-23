@@ -1,14 +1,14 @@
-import { Component, OnInit, ViewEncapsulation } from '@angular/core';
-import { PresetItem, NgxDrpOptions } from '../model/model';
-import { RangeStoreService } from '../services/range-store.service';
-import { OverlayRef } from '@angular/cdk/overlay';
-import { ConfigStoreService } from '../services/config-store.service';
-import { pickerOverlayAnimations } from './picker-overlay.animations';
+import { Component, OnInit, ViewEncapsulation } from "@angular/core";
+import { PresetItem, NgxDrpOptions } from "../model/model";
+import { RangeStoreService } from "../services/range-store.service";
+import { OverlayRef } from "@angular/cdk/overlay";
+import { ConfigStoreService } from "../services/config-store.service";
+import { pickerOverlayAnimations } from "./picker-overlay.animations";
 
 @Component({
-  selector: 'ngx-mat-drp-picker-overlay',
-  templateUrl: './picker-overlay.component.html',
-  styleUrls: ['./picker-overlay.component.css'],
+  selector: "ngx-mat-drp-picker-overlay",
+  templateUrl: "./picker-overlay.component.html",
+  styleUrls: ["./picker-overlay.component.css"],
   animations: [pickerOverlayAnimations.transformPanel],
   encapsulation: ViewEncapsulation.None
 })
@@ -23,6 +23,7 @@ export class PickerOverlayComponent implements OnInit {
   startDatePrefix: string;
   endDatePrefix: string;
   applyLabel: string;
+  applyOnPresetClick: boolean;
   cancelLabel: string;
   shouldAnimate: string;
 
@@ -35,14 +36,20 @@ export class PickerOverlayComponent implements OnInit {
   ngOnInit() {
     this.fromDate = this.rangeStoreService.fromDate;
     this.toDate = this.rangeStoreService.toDate;
-    this.startDatePrefix = this.configStoreService.ngxDrpOptions.startDatePrefix || 'FROM:';
-    this.endDatePrefix = this.configStoreService.ngxDrpOptions.endDatePrefix || 'TO:';
-    this.applyLabel = this.configStoreService.ngxDrpOptions.applyLabel || 'Apply';
-    this.cancelLabel = this.configStoreService.ngxDrpOptions.cancelLabel || 'Cancel';
+    this.startDatePrefix =
+      this.configStoreService.ngxDrpOptions.startDatePrefix || "FROM:";
+    this.endDatePrefix =
+      this.configStoreService.ngxDrpOptions.endDatePrefix || "TO:";
+    this.applyLabel =
+      this.configStoreService.ngxDrpOptions.applyLabel || "Apply";
+    this.cancelLabel =
+      this.configStoreService.ngxDrpOptions.cancelLabel || "Cancel";
     this.presets = this.configStoreService.ngxDrpOptions.presets;
+    this.applyOnPresetClick =
+      this.configStoreService.ngxDrpOptions.applyOnPresetClick || false;
     this.shouldAnimate = this.configStoreService.ngxDrpOptions.animation
-      ? 'enter'
-      : 'noop';
+      ? "enter"
+      : "noop";
     ({
       fromDate: this.fromMinDate,
       toDate: this.fromMaxDate
@@ -62,8 +69,11 @@ export class PickerOverlayComponent implements OnInit {
   }
 
   updateRangeByPreset(presetItem: PresetItem) {
-    this.updateFromDate(presetItem.range.fromDate);
-    this.updateToDate(presetItem.range.toDate);
+    this.updateFromDate(new Date(presetItem.range.fromDate));
+    this.updateToDate(new Date(presetItem.range.toDate));
+    if (this.applyOnPresetClick) {
+      this.applyNewDates(null);
+    }
   }
 
   applyNewDates(e) {
