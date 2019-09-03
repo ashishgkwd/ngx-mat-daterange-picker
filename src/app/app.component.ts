@@ -85,4 +85,16 @@ export class AppComponent implements OnInit {
     const currMonthEnd = new Date(today.getFullYear(), today.getMonth() + 1, 0);
     this.pickerOne.resetDates({ fromDate: currMonthStart, toDate: currMonthEnd });
   }
+
+  clearFrom() {
+    this.pickerOne.resetDates({ fromDate: null, toDate: this.range.toDate });
+  }
+
+  clearTo() {
+    this.pickerOne.resetDates({ fromDate: this.range.fromDate, toDate: null });
+  }
+
+  clear() {
+    this.pickerOne.resetDates({ fromDate: null, toDate: null });
+  }
 }
