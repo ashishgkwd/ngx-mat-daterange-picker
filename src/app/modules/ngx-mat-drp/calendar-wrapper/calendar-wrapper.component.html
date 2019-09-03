@@ -1,10 +1,15 @@
 <div>
 
   <!-- <mat-divider></mat-divider> -->
-  <span class="ngx-mat-drp-date-label">
-    <label>{{prefixLabel}}</label>
-    <label class="ngx-mat-drp-selected-date-label">{{selectedDate | date:dateFormat}}</label>
-  </span>
+  <div class="ngx-mat-drp-date-header">
+    <div>
+      <span class="ngx-mat-drp-date-label">
+        <label>{{prefixLabel}}</label>
+        <label class="ngx-mat-drp-selected-date-label">{{selectedDate | date:dateFormat}}</label>
+      </span>
+    </div>
+    <button mat-button class="ngx-mat-drp-date-clear" (click)="clear()">{{clearLabel}}</button>
+  </div>
   <!-- <mat-divider></mat-divider> -->
 
   <mat-calendar 

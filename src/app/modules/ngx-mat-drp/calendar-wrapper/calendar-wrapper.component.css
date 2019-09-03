@@ -1,3 +1,16 @@
+.ngx-mat-drp-date-header {
+  width: 100%;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+}
+
+.ngx-mat-drp-date-clear {
+  padding: 0 8px;
+  line-height: 25px;
+  min-width: 66px;
+}
+
 .ngx-mat-drp-date-label {
     background: #fafafa;
     margin: 15px;
@@ -5,6 +18,11 @@
     width: 100%;
     font-size: 14px;
     font-weight: 500;
+    white-space: nowrap;
+}
+
+.ngx-mat-drp-date-label label {
+  margin-bottom: 0;
 }
 
 .ngx-mat-drp-selected-date-label {
