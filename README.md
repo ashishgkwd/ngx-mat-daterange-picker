@@ -110,7 +110,7 @@ export class AppComponent {
     this.options = {
                     presets: this.presets,
                     format: 'mediumDate',
-                    range: {fromDate:today, toDate: today},
+                    range: {fromDate:today, toDate: today}, // range: undefined -> If you don't want to select default date;
                     applyLabel: "Submit",
                     calendarOverlayConfig: {
                       shouldCloseOnBackdropClick: false,
