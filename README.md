@@ -116,6 +116,7 @@ export class AppComponent {
                       shouldCloseOnBackdropClick: false,
                       hasBackDrop: false
                     }
+                    // defaultUnselect: true,
                     // cancelLabel: "Cancel",
                     // excludeWeekends:true,
                     // fromMinMax: {fromDate:fromMin, toDate:fromMax},

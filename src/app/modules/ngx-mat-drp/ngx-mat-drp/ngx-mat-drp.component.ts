@@ -63,10 +63,12 @@ export class NgxMatDrpComponent implements OnInit, OnDestroy {
       this.selectedDateRangeChanged.emit(range);
     });
 
-    this.rangeStoreService.updateRange(
-      this.options.range.fromDate,
-      this.options.range.toDate
-    );
+    if(!this.options.defaultUnselect) {  
+      this.rangeStoreService.updateRange(
+        this.options.range.fromDate,
+        this.options.range.toDate
+      );
+    }
     this.changeDetectionRef.detectChanges();
   }
 

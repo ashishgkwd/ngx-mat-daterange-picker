@@ -28,7 +28,8 @@ export class AppComponent implements OnInit {
       presets: this.presets,
       format: 'mediumDate',
       range: { fromDate: today, toDate: today },
-      applyLabel: 'Submit'
+      applyLabel: 'Submit',
+      // defaultUnselect: true,
       // excludeWeekends:true,
       // fromMinMax: {fromDate:fromMin, toDate:fromMax},
       // toMinMax: {fromDate:toMin, toDate:toMax},
