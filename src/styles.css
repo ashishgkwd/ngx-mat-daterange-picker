@@ -23,3 +23,57 @@
     color: #53b53f;
     user-select: none;
 }
+
+@media only screen and (max-width:478px){
+    .ngx-mat-drp-calendar-container {
+        display: inline!important;
+    }
+    .ngx-mat-drp-calendar-item{
+        float: left!important;
+        min-width: 100%!important;
+        padding: 0!important;
+    }
+    ngx-mat-drp-picker-overlay{
+        left: 8px!important;
+        right: 8px!important;
+        overflow: auto!important;
+    }
+    .cdk-overlay-pane{
+      right: 8px!important;
+      overflow: auto!important;
+      display: block!important;
+      top:8px!important;
+      padding: 1em!important;
+    }
+}
+  
+@media only screen and (max-width: 768px) and (min-width: 479px){
+    .ngx-mat-drp-calendar-container{
+      display: block!important;
+      min-width: 250px!important;
+  }
+    ngx-mat-drp-picker-overlay{
+        right: 8px!important;
+        overflow: auto!important;
+    }
+  
+    .ngx-mat-drp-calendar-item{
+        float: left!important;
+        min-width: 210!important;
+        padding: 0!important;
+    }
+    .cdk-overlay-pane{
+      left: 8px!important;
+      right: 8px!important;
+      overflow: auto!important;
+      display: block!important;
+      top:8px!important;
+      padding: 1em!important;
+  }
+}
+
+@media only screen and (min-width:689px){
+    .cdk-overlay-pane{
+    min-height: max-content!important;
+  }
+}
