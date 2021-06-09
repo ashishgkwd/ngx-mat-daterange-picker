@@ -31,4 +31,5 @@ export interface NgxDrpOptions {
   placeholder?: string;
   startDatePrefix?: string;
   endDatePrefix?: string;
+  defaultUnselect?:boolean;
 }
