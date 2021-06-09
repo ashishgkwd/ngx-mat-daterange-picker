@@ -1,8 +1,6 @@
 .ngx-mat-drp-calendar-container {
     display: flex;
     justify-content: space-around;
-    min-width: 650px;
-    height: 300px;
 }
 
 .ngx-mat-drp-calendar-item {
@@ -16,6 +14,9 @@
 
 .ngx-mat-drp-menu {
     height: 100%;
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
 }
 .ngx-mat-drp-controls {
     display: flex;

@@ -4,6 +4,9 @@
     Selected date from: {{range.fromDate|date}} to: {{range.toDate|date}} 
   </div>
   <button (click)="reset()">Reset Dates</button>
+  <button (click)="clearFrom()">Clear From</button>
+  <button (click)="clearTo()">Clear To</button>
+  <button (click)="clear()">Clear Dates</button>
   <hr class="demo-rule">
   <div class="demo-box">
     <ngx-mat-drp (selectedDateRangeChanged)="updateRange($event)" [options]="options" #pickerOne></ngx-mat-drp>

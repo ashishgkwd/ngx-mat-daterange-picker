@@ -59,7 +59,7 @@ export class NgxMatDrpComponent implements OnInit, OnDestroy {
         range.toDate,
         this.options.format
       );
-      this.selectedDateRange = `${from} - ${to}`;
+      this.selectedDateRange = (from === '' && to === '') ? '' : `${from} - ${to}`;
       this.selectedDateRangeChanged.emit(range);
     });
 
@@ -77,7 +77,7 @@ export class NgxMatDrpComponent implements OnInit, OnDestroy {
   }
 
   private formatToDateString(date: Date, format: string): string {
-    return this.datePipe.transform(date, format);
+    return date ? this.datePipe.transform(date, format) : '';
   }
 
   openCalendar(event) {

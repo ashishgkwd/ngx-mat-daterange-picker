@@ -25,6 +25,7 @@ export class CalendarWrapperComponent implements OnChanges {
   readonly selectedDateChange: EventEmitter<Date> = new EventEmitter<Date>();
 
   dateFormat: string;
+  clearLabel: string;
   @Input() selectedDate: Date;
   @Input() prefixLabel: string;
   @Input() minDate: Date;
@@ -33,6 +34,7 @@ export class CalendarWrapperComponent implements OnChanges {
 
   constructor(private configStore: ConfigStoreService) {
     this.dateFormat = configStore.ngxDrpOptions.format;
+    this.clearLabel = configStore.ngxDrpOptions.clearLabel || 'Clear';
     if (configStore.ngxDrpOptions.excludeWeekends) {
       this.weekendFilter = (d: Date): boolean => {
         const day = d.getDay();
@@ -43,7 +45,10 @@ export class CalendarWrapperComponent implements OnChanges {
 
   ngOnChanges(changes: SimpleChanges) {
     // Necessary to force view refresh
-    this.matCalendar.activeDate = changes.selectedDate.currentValue;
+    if (changes.selectedDate.currentValue) {
+      this.matCalendar.activeDate = changes.selectedDate.currentValue;
+    }
+    this.matCalendar.selected = changes.selectedDate.currentValue;
   }
 
   onSelectedChange(date) {
@@ -53,4 +58,9 @@ export class CalendarWrapperComponent implements OnChanges {
   onYearSelected(e) {}
 
   onUserSelection(e) {}
+
+  clear() {
+    this.selectedDate = null;
+    this.onSelectedChange(this.selectedDate);
+  }
 }
