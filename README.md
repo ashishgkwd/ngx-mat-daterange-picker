@@ -1,6 +1,6 @@
 [![CircleCI](https://circleci.com/gh/ashishgkwd/ngx-mat-daterange-picker.svg?style=shield)](https://circleci.com/gh/ashishgkwd/ngx-mat-daterange-picker) [![Maintainability](https://api.codeclimate.com/v1/badges/2b0d09a866f6d2ed139c/maintainability)](https://codeclimate.com/github/ashishgkwd/ngx-mat-daterange-picker/maintainability)
 [![Test Coverage](https://api.codeclimate.com/v1/badges/2b0d09a866f6d2ed139c/test_coverage)](https://codeclimate.com/github/ashishgkwd/ngx-mat-daterange-picker/test_coverage) 
-![Angular_Version 6](https://img.shields.io/badge/Angular%20Version-6-brightgreen.svg)
+![Angular_Version 9](https://img.shields.io/badge/Angular%20Version-9-brightgreen.svg)
 
 # NgxMatDaterangePicker
 
@@ -22,10 +22,10 @@ https://ashishgkwd.github.io/ngx-mat-daterange-picker/
 
 Angular Version | Compatible version
 ---|---
-6.0 | v1.1.4
+9.0 and below | v1.1.5
 5.0 and below | v0.0.2
 
-#### For Angular v6:
+#### For Angular v6 and above:
 ```javascript
 npm install ngx-mat-daterange-picker --save
 or
@@ -59,9 +59,9 @@ Please note and install the following peer dependencies necessary for Angular v6
 
 ```json
 "peerDependencies": {
-    "@angular/animations": "^6.1",
-    "@angular/cdk": "^6.1",
-    "@angular/material": "^6.1"
+    "@angular/animations": "^9.1.0",
+    "@angular/cdk": "^9.1.0",
+    "@angular/material": "^9.1.0"
   }
 ```
 
