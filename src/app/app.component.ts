@@ -14,7 +14,7 @@ export class AppComponent implements OnInit {
   range: Range = { fromDate: new Date(), toDate: new Date() };
   options: NgxDrpOptions;
   presets: Array<PresetItem> = [];
-  @ViewChild('pickerOne') pickerOne;
+  @ViewChild('pickerOne', { static: false }) pickerOne;
 
   ngOnInit() {
     const today = new Date();

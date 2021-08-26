@@ -30,7 +30,7 @@ import { Subscription } from 'rxjs';
   changeDetection: ChangeDetectionStrategy.OnPush
 })
 export class NgxMatDrpComponent implements OnInit, OnDestroy {
-  @ViewChild('calendarInput')
+  @ViewChild('calendarInput', { static: false })
   calendarInput;
   @Output()
   readonly selectedDateRangeChanged: EventEmitter<Range> = new EventEmitter<Range>();
